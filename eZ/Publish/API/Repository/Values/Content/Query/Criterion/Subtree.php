@@ -33,7 +33,7 @@ class Subtree extends Criterion implements CriterionInterface
     public function __construct($value)
     {
         foreach ((array)$value as $pathString) {
-            if (preg_match('/^(\/\w+)+\/$/', $pathString) !== 1) {
+            if (preg_match('/^(\/\w+)+\/?$/', $pathString) !== 1) {
                 throw new InvalidArgumentException("value '$pathString' must follow the pathString format, eg /1/2/");
             }
         }
